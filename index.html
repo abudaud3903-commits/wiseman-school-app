@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WISEMAN SCHOOL Management</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:#f1f5f9;color:#172554}
+header{background:#102c54;color:white;padding:20px 16px}
+header h1{font-size:23px;margin:0 0 7px}
+header p{margin:0;font-size:14px;color:#e2e8f0}
+.container{padding:16px;max-width:1100px;margin:auto}
+.welcome{background:white;padding:18px;border-radius:14px;margin-bottom:16px;box-shadow:0 2px 8px #0000000b}
+.welcome h2{margin:0 0 8px;font-size:20px}
+.welcome p{margin:0;color:#64748b;line-height:1.7;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:white;border-radius:12px;padding:16px;box-shadow:0 2px 8px #0000000b}
+.card .label{font-size:13px;color:#64748b}
+.card .number{font-size:27px;font-weight:bold;margin-top:8px;color:#123d70}
+.section-title{margin:24px 0 12px;font-size:19px}
+.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+button{border:0;border-radius:10px;padding:14px 8px;background:white;color:#123d70;font-size:14px;font-weight:bold;box-shadow:0 2px 7px #00000012;cursor:pointer}
+button:active{transform:scale(.98)}
+button span{display:block;font-size:23px;margin-bottom:7px}
+.panel{display:none;background:white;padding:18px;margin-top:18px;border-radius:12px;line-height:1.8}
+.panel h3{margin-top:0}
+.panel input,.panel textarea,.panel select{width:100%;padding:11px;margin:6px 0 12px;border:1px solid #cbd5e1;border-radius:7px;font-size:15px}
+.action{background:#123d70;color:white;width:100%;margin-top:5px}
+.notice{background:#fff8e1;border-left:4px solid #d5a323;padding:12px;border-radius:5px;font-size:13px;line-height:1.7;margin-top:20px}
+footer{text-align:center;padding:22px;color:#64748b;font-size:12px}
+@media(min-width:650px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.menu{grid-template-columns:repeat(4,minmax(0,1fr))}header{padding:25px calc((100% - 1050px)/2)}}
+</style>
+</head>
+<body>
+<header>
+<h1>🏫 WISEMAN SCHOOL</h1>
+<p>School Management System | মিরপুর-২, ঢাকা</p>
+</header>
+
+<main class="container">
+<div class="welcome">
+<h2>শিক্ষায় ভিত্তি, মূল্যবোধে ভবিষ্যৎ</h2>
+<p><strong>ঠিকানা:</strong> ৯১, পশ্চিম মনিপুর, শহীদ শেখ আব্দুল হাই রোড, ৬০ ফিট রোড সংলগ্ন, মিরপুর-২, ঢাকা-১২১৬।</p>
+</div>
+
+<h2 class="section-title">📊 স্কুল ড্যাশবোর্ড</h2>
+<div class="stats">
+<div class="card"><div class="label">মোট শিক্ষার্থী</div><div class="number">২৮০</div></div>
+<div class="card"><div class="label">মোট শিক্ষক</div><div class="number">২২</div></div>
+<div class="card"><div class="label">অন্যান্য কর্মচারী</div><div class="number">৩</div></div>
+<div class="card"><div class="label">মোট জনবল</div><div class="number">২৫</div></div>
+</div>
+
+<h2 class="section-title">📚 ব্যবস্থাপনা মেনু</h2>
+<div class="menu">
+<button onclick="showPanel('students')"><span>👨‍🎓</span>শিক্ষার্থী তথ্য</button>
+<button onclick="showPanel('teachers')"><span>👨‍🏫</span>শিক্ষক ও কর্মচারী</button>
+<button onclick="showPanel('attendance')"><span>✅</span>উপস্থিতি</button>
+<button onclick="showPanel('classes')"><span>📚</span>শ্রেণি ও বিভাগ</button>
+<button onclick="showPanel('exams')"><span>📝</span>পরীক্ষা ও ফলাফল</button>
+<button onclick="showPanel('fees')"><span>💰</span>বেতন ও ফি</button>
+<button onclick="showPanel('notices')"><span>📢</span>নোটিশ বোর্ড</button>
+<button onclick="showPanel('reports')"><span>📈</span>রিপোর্ট</button>
+<button onclick="showPanel('profile')"><span>🏫</span>স্কুলের তথ্য</button>
+<button onclick="showPanel('admin')"><span>🔐</span>অ্যাডমিন প্যানেল</button>
+</div>
+
+<div id="students" class="panel">
+<h3>👨‍🎓 শিক্ষার্থী ব্যবস্থাপনা</h3>
+<p>এখানে শিক্ষার্থীর নাম, আইডি, ভর্তি নম্বর, শ্রেণি, অভিভাবকের নাম ও যোগাযোগের তথ্য রাখার ব্যবস্থা তৈরি করা হবে।</p>
+<input placeholder="শিক্ষার্থীর নাম">
+<input placeholder="Student ID / Admission No.">
+<select><option>শ্রেণি নির্বাচন করুন</option><option>Pre-Play</option><option>Play</option><option>Nursery</option><option>KG</option><option>Class One</option><option>Class Two</option><option>Class Three</option><option>Class Four</option><option>Class Five</option><option>Class Six</option><option>Class Seven</option><option>Class Eight</option></select>
+<button class="action" onclick="alert('এই নমুনা সংস্করণে তথ্য স্থায়ীভাবে সংরক্ষিত হয় না।')">শিক্ষার্থী যোগ করুন</button>
+</div>
+
+<div id="teachers" class="panel">
+<h3>👨‍🏫 শিক্ষক ও কর্মচারী</h3>
+<p>মোট শিক্ষক: ২২ জন (নারী ১৬, পুরুষ ৬)। অন্যান্য কর্মচারী: ৩ জন।</p>
+<p>পরবর্তী ধাপে নাম, পদবি, মোবাইল, যোগদানের তারিখ ও দায়িত্বের তথ্য যুক্ত করা হবে।</p>
+</div>
+
+<div id="attendance" class="panel">
+<h3>✅ উপস্থিতি ব্যবস্থাপনা</h3>
+<p>শ্রেণি ও তারিখ অনুযায়ী শিক্ষার্থী এবং শিক্ষক-কর্মচারীদের উপস্থিতি রেকর্ড করার ব্যবস্থা এখানে যুক্ত হবে।</p>
+</div>
+
+<div id="classes" class="panel">
+<h3>📚 শ্রেণি ও বিভাগ</h3>
+<p>Pre-Play, Play, Nursery, KG এবং Class One থেকে Class Eight পর্যন্ত শ্রেণির কাঠামো রয়েছে। স্কুলের প্রকৃত শ্রেণি ও বিভাগ অনুযায়ী এটি চূড়ান্ত করা হবে।</p>
+</div>
+
+<div id="exams" class="panel">
+<h3>📝 পরীক্ষা ও ফলাফল</h3>
+<p>পরীক্ষার নাম, বিষয়ভিত্তিক নম্বর, গ্রেড, ফলাফল ও রিপোর্ট কার্ডের ব্যবস্থা এখানে যুক্ত হবে।</p>
+</div>
+
+<div id="fees" class="panel">
+<h3>💰 বেতন ও ফি</h3>
+<p>শিক্ষার্থীর মাসিক বেতন, ভর্তি ফি, অন্যান্য ফি, পরিশোধের তারিখ ও বকেয়া হিসাবের ব্যবস্থা এখানে যুক্ত হবে।</p>
+</div>
+
+<div id="notices" class="panel">
+<h3>📢 নোটিশ বোর্ড</h3>
+<input placeholder="নোটিশের শিরোনাম">
+<textarea placeholder="নোটিশের বিবরণ" rows="4"></textarea>
+<p>এই নমুনা সংস্করণে নোটিশ প্রকাশ ও সংরক্ষণের সুবিধা এখনো চালু হয়নি।</p>
+</div>
+
+<div id="reports" class="panel">
+<h3>📈 রিপোর্ট</h3>
+<p>শিক্ষার্থী, উপস্থিতি, পরীক্ষার ফলাফল, বেতন ও বকেয়া সংক্রান্ত রিপোর্ট তৈরি করার ব্যবস্থা পরবর্তী ধাপে যুক্ত হবে।</p>
+</div>
+
+<div id="profile" class="panel">
+<h3>🏫 স্কুলের পরিচিতি</h3>
+<p><strong>নাম:</strong> WISEMAN SCHOOL (ওয়াইজম্যান স্কুল)</p>
+<p><strong>ঠিকানা:</strong> ৯১, পশ্চিম মনিপুর, শহীদ শেখ আব্দুল হাই রোড, ৬০ ফিট রোড সংলগ্ন, মিরপুর-২, ঢাকা-১২১৬।</p>
+<p><strong>মূলনীতি:</strong> শিক্ষায় ভিত্তি, মূল্যবোধে ভবিষ্যৎ।</p>
+</div>
+
+<div id="admin" class="panel">
+<h3>🔐 অ্যাডমিন প্যানেল</h3>
+<p>প্রশাসনিক নিয়ন্ত্রণ, শিক্ষক-ভিত্তিক অনুমতি, লগইন এবং তথ্য সংরক্ষণের নিরাপদ ব্যবস্থা পরবর্তী ধাপে যুক্ত করতে হবে।</p>
+<p><strong>গুরুত্বপূর্ণ:</strong> এই পেজে এখনো প্রকৃত লগইন বা নিরাপদ ডেটাবেস নেই।</p>
+</div>
+
+<div class="notice">
+<strong>⚠️ গুরুত্বপূর্ণ তথ্য:</strong> এটি প্রাথমিক ডিজাইন। এখানে প্রকৃত শিক্ষার্থীর ব্যক্তিগত তথ্য দেবেন না। তথ্য নিরাপদে সংরক্ষণ, অ্যাডমিনের সম্পাদনা-অনুমতি এবং শিক্ষকদের শুধু দেখার অনুমতি চালু করতে পরবর্তী ধাপে ডেটাবেস ও লগইন যুক্ত করতে হবে।
+</div>
+</main>
+
+<footer>WISEMAN SCHOOL © 2026 | School Management App</footer>
+
+<script>
+function showPanel(id){
+document.querySelectorAll('.panel').forEach(function(p){p.style.display='none'});
+var panel=document.getElementById(id);
+if(panel){panel.style.display='block';panel.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+</script>
+</body>
+</html>
